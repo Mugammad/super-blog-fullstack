@@ -32,4 +32,4 @@
         - dotenv (hide the port with a .env file)
 
 ## Conclusion
-You guys are behind with backend, need to step up the game with more functionality 
+You guys are behind with backend, need to step up the game with more functionality. 

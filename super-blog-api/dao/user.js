@@ -30,13 +30,13 @@ class UserDAO {
         }
     }
     async getUsers() {
-        const [id] = await db('user')
+        const users = await db('user')
             .select(
                 'username'
             )
             .returning('id')
 
-        return id
+        return users
     }
 }
 

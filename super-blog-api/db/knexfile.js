@@ -1,3 +1,5 @@
+const creds = require('../config/creds.js')
+
 // Update with your config settings.
 
 /**
@@ -7,9 +9,9 @@ module.exports = {
   development: {
     client: 'postgresql',
     connection: {
-      database: 'super-blog-db',
-      user:     'postgres',
-      password: 'mobread99'
+      database: creds.DB_NAME,
+      user:     creds.DB_USER,
+      password: creds.DB_PASS
     },
     pool: {
       min: 2,

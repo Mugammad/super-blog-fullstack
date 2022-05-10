@@ -1,9 +1,11 @@
 const express = require('express')
 const router = require('./routes')
+const bodyParser = require('body-parser')
+require('dotenv').config()
 
 const app = express()
 app.use(express.json())
-
+app.use(bodyParser.json())
 app.use(router)
 
 app.get('/', (req, res) => {
@@ -11,7 +13,7 @@ app.get('/', (req, res) => {
 })
 
 app.use((err, req, res, next) => {
-    res.status(parseInt(400)).json(err.detail)
+    res.status(400).json(err)
 })
 
-app.listen(8080, () => console.log('server is running on port 8080'))
+app.listen(process.env.PORT, () => console.log(`server is running on port ${process.env.PORT}`))

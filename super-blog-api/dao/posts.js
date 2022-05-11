@@ -8,7 +8,7 @@ class PostDAO {
                 .where('name', category)
                 .returning('categoryFound')
             
-            const [id] = await db('post')
+            const [id] = await db('posts')
                 .insert({
                     title,
                     category_id: categoryFound.id,

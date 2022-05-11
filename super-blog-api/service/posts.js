@@ -6,6 +6,9 @@ class PostService {
 
         return postDAO.createPost(title, category, content, image, userId, next)
     }
+    async deletePost(postId, userId, next){
+        return postDAO.deletePost(postId, userId, next)
+    }
 }
 
 module.exports = new PostService()

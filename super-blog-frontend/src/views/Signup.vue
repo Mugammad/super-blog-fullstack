@@ -15,7 +15,7 @@
             ">
           <div class="card-body p-5 shadow-5 text-center">
             <h2 class="fw-bold mb-5">Sign up now</h2>
-            <form>
+            <form @submit.prevent="Signup">
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row">
                 <div class="col-md-6 mb-4">
@@ -108,8 +108,40 @@
 
 <script>
 export default {
+  data() {
+    return {
 
-}
+      email: "",
+      password: "",
+      username: "",
+
+    };
+  },
+
+  methods : {
+    Signup() {
+      fetch("", {
+        method: 'POST',
+        body: JSON.stringify({
+          email: this.email,
+          password: this.password,
+          username: this.username,
+        }),
+     
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+      })
+     .then((res) => res.json())
+     .then((user) => {
+       alert("user registered");
+       localStorage.getItem("jwt", user.jwt);
+       this.$router.push({ name: "Login"})
+     })     
+    },
+  },
+};
+
 </script>
 
 <style scoped>

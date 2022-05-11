@@ -13,7 +13,7 @@
           class="img-fluid" alt="Sample image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form>
+        <form @submit.prevent="login">
           <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
             <p class="lead fw-normal mb-0 me-3">Sign in with</p>
             <button type="button" class="btn btn-primary btn-floating mx-1">
@@ -75,7 +75,49 @@
 
 <script>
 export default {
+ data() {
+     return {
 
+       email: "",
+       password: "",
+
+     };
+  },
+
+methods: {
+
+  login() {
+    const user = {
+      email: this.email,
+      password: this.password,
+    }
+    console.log(user)
+    fetch("", {
+      method: "PATCH",
+      body: JSON.stringify(user),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+    .then((response) => response.json())
+    .then((json) => {
+      if(json.jwt){
+        localStorage.setItem("jwt", json.jwt);
+      }
+      console.log("jwt", json)
+      if(localStorage.getItem("jwt")) {
+        alert("Logging in ..");
+        this.$router.push({ name: "Blogs"});
+      }
+      else {
+        alert("Wrong Credentials")
+      }
+    })
+    .catch((err) => {
+      alert(err);
+    });
+  },
+},
 }
 </script>
 
@@ -102,8 +144,8 @@ export default {
 }
 
 .page{
-  padding-top: 90px;
-  
+  padding-top: 15px;
+  /* height: 82.5vh; */
 }
 a{
     text-decoration: none;

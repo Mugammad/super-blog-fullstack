@@ -1,0 +1,10 @@
+POST http://localhost:8080/blogs
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxM30sImlhdCI6MTY1MjI1NTY0MCwiZXhwIjoxNjUyNDI4NDQwfQ.RxWbp9cqaoxXj8Zao7DfH9-eJFnhom42qjAdSm5sjiE
+
+{
+    "title": "First Blog",
+    "category": "Gaming",
+    "content": "gaming is fun",
+    "image": "image of a game"
+}

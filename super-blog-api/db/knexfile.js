@@ -7,7 +7,7 @@ const creds = require('../config/creds.js')
  */
 module.exports = {
   development: {
-    client: 'postgresql',
+    client: 'pg',
     connection: {
       database: creds.DB_NAME,
       user:     creds.DB_USER,
@@ -23,7 +23,7 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
+    client: 'pg',
     connection: process.env.DATABASE_URL,
     pool: {
       min: 2,

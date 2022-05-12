@@ -24,6 +24,16 @@ class PostDAO {
             return next(error)
         }
     }
+    async getBlogs(next) {
+        try {
+            const blogs = await db('posts')
+                .select()
+                .returning('blogs')
+            return blogs
+        } catch (error) {
+            return next(error)
+        }
+    }
     async deletePost(postId, userId, next) {
         try {
             const [postFound] = await db('posts')

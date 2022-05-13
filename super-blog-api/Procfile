@@ -1,1 +1,0 @@
-web: npm run rollback && npm run migrate && npm run seed && node index.js

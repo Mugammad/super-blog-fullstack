@@ -3,12 +3,16 @@ Content-Type: application/json
 x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxM30sImlhdCI6MTY1MjI1NTY0MCwiZXhwIjoxNjUyNDI4NDQwfQ.RxWbp9cqaoxXj8Zao7DfH9-eJFnhom42qjAdSm5sjiE
 
 {
-    "title": "Second Blog",
+    "title": "First Blog",
     "category": "Coding",
     "content": "Coding is fun",
     "image": "image of code"
 }
 
 ###
-DELETE http://localhost:8080/blogs/1
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxM30sImlhdCI6MTY1MjI1NTY0MCwiZXhwIjoxNjUyNDI4NDQwfQ.RxWbp9cqaoxXj8Zao7DfH9-eJFnhom42qjAdSm5sjiE
+GET http://localhost:8080/blogs
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxM30sImlhdCI6MTY1MjM0MzI1NywiZXhwIjoxNjUyNTE2MDU3fQ.jRmVTjY9flG1D0TU1Q5_buizmp6lHPIIar3X5iOxvxY
+
+###
+DELETE http://localhost:8080/blogs/3
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxM30sImlhdCI6MTY1MjM0MzI1NywiZXhwIjoxNjUyNTE2MDU3fQ.jRmVTjY9flG1D0TU1Q5_buizmp6lHPIIar3X5iOxvxY

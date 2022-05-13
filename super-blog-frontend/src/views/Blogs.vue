@@ -160,69 +160,28 @@
           </div>
         </div>
       </div></div>
-</div> -->
-    <div class="row">
-      <div class="col-md-6">
-        <div class="blog-card spring-fever">
-          <div class="title-content">
-            <h3><a href="#">10 inspiring photos</a></h3>
-            <div class="intro"><a href="#">Inspiration</a></div>
-          </div>
-          <div class="card-info">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim...
-            <router-link to="/blog" class="router">View</router-link>
-          </div>
-          <div class="utility-info">
-            <ul class="utility-list">
-              <!-- <button><span class="licon icon-like"></span><a href="#">2</a></button> -->
-              <button class="btn-secondary like-review">
-                <i class="fa fa-heart" aria-hidden="true"></i
-                ><a href="#"> 2</a> Likes
-              </button>
-            </ul>
-          </div>
-          <div class="gradient-overlay"></div>
-          <div class="color-overlay"></div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="blog-card spring-fever">
-          <div class="title-content">
-            <h3><a href="#">10 inspiring photos</a></h3>
-            <div class="intro"><a href="#">Inspiration</a></div>
-          </div>
-          <div class="card-info">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim...
-            <a href="#">Edit<span class="licon icon-arr icon-black"></span></a>
-            <a href="#"
-              >Delete<span class="licon icon-arr icon-black"></span
-            ></a>
-          </div>
-          <div class="utility-info">
-            <ul class="utility-list">
-              <button>
-                <span class="licon icon-like"></span><a href="#">2</a>
-              </button>
-            </ul>
-          </div>
-          <div class="gradient-overlay"></div>
-          <div class="color-overlay"></div>
-        </div>
-      </div>
-      <!-- /.blog-card -->
-    </div>
+</div>
+</div>
+
+<div class="loader"></div> -->
   </div>
 </template>
 
 <script>
 import Navbar from "../components/Navbar.vue";
-
 export default {
   components: { Navbar },
+  data() {
+    return {
+      blogs: [],
+      title: "",
+      img: "",
+      category: "",
+      content: "",
+    };
+  },
+
+  methods: {},
 };
 </script>
 
@@ -777,5 +736,34 @@ h3:after {
     transform: rotate(360deg);
   }
 }
-</style>
 
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-bottom: 16px solid blue;
+  width: 120px;
+  left: 50%;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>

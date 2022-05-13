@@ -135,7 +135,7 @@ export default {
         password: this.password,
       };
       console.log(user);
-      fetch("http://localhost:8080/signin", {
+      fetch("https://super-blog-backend.herokuapp.com/signin", {
         method: "POST",
         body: JSON.stringify(user),
         headers: {
@@ -146,12 +146,13 @@ export default {
         .then((json) => {
           if (json.jwt) {
             localStorage.setItem("jwt", json.jwt);
-            if (localStorage.getItem("jwt")) {
-              alert("Logging in ..");
-              this.$router.push({ name: "Blogs" });
-            } else {
-              alert("Wrong Credentials");
-            }
+          }
+          console.log("jwt", json);
+          if (localStorage.getItem("jwt")) {
+            alert("Logging in ..");
+            this.$router.push({ name: "Blogs" });
+          } else {
+            alert("Wrong Credentials");
           }
         })
         .catch((err) => {

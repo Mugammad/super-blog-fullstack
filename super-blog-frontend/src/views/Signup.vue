@@ -34,116 +34,111 @@
                           >First name</label
                         >
                       </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline">
+
+                      <!-- Email input -->
+                      <div class="form-outline mb-4">
                         <input
-                          type="text"
-                          id="form3Example2"
+                          type="email"
+                          id="form3Example3"
                           class="form-control"
                         />
-                        <label class="form-label" for="form3Example2"
-                          >Last name</label
+                        <label class="form-label" for="form3Example3"
+                          >Email address</label
                         >
                       </div>
+
+                      <!-- Password input -->
+                      <div class="form-outline mb-4">
+                        <input
+                          type="password"
+                          id="form3Example4"
+                          class="form-control"
+                        />
+                        <label class="form-label" for="form3Example4"
+                          >Password</label
+                        >
+                      </div>
+
+                      <div class="mb-3">
+                        <select
+                          id="type"
+                          class="form-select"
+                          aria-label="Default select example"
+                        >
+                          <option value="Blogger">Blogger</option>
+                          <option value="Reader">Reader</option>
+                        </select>
+                        <label for="type" class="form-label"
+                          >WHAT ARE YOU?</label
+                        >
+                      </div>
+                      <br />
+                      <!-- Checkbox -->
+                      <div
+                        class="form-check d-flex justify-content-center mb-4"
+                      >
+                        <input
+                          class="form-check-input me-2"
+                          type="checkbox"
+                          value=""
+                          id="form2Example33"
+                          checked
+                        />
+                        <label class="form-check-label" for="form2Example33">
+                          Subscribe to our newsletter
+                        </label>
+                      </div>
+
+                      <!-- Submit button -->
+                      <button
+                        type="submit"
+                        class="btn btn-primary btn-block mb-4"
+                      >
+                        Sign up
+                      </button>
+
+                      <!-- Register buttons -->
+                      <div class="text-center">
+                        <p>or sign up with:</p>
+                        <button
+                          type="button"
+                          class="btn btn-link btn-floating mx-1"
+                        >
+                          <a ref="https://www.facebook.com/"
+                            ><i class="fa fa-facebook-f"></i
+                          ></a>
+                        </button>
+
+                        <button
+                          type="button"
+                          class="btn btn-link btn-floating mx-1"
+                        >
+                          <i class="fa fa-google"></i>
+                        </button>
+
+                        <button
+                          type="button"
+                          class="btn btn-link btn-floating mx-1"
+                        >
+                          <i class="fa fa-twitter"></i>
+                        </button>
+
+                        <button
+                          type="button"
+                          class="btn btn-link btn-floating mx-1"
+                        >
+                          <i class="fa fa-github"></i>
+                        </button>
+                      </div>
+
+                      <p class="small fw-bold mt-2 pt-1 mb-0">
+                        Already have an account?
+                        <a class="link-danger"
+                          ><router-link to="/login">Log in</router-link></a
+                        >
+                      </p>
                     </div>
                   </div>
-
-                  <!-- Email input -->
-                  <div class="form-outline mb-4">
-                    <input
-                      type="email"
-                      id="form3Example3"
-                      class="form-control"
-                    />
-                    <label class="form-label" for="form3Example3"
-                      >Email address</label
-                    >
-                  </div>
-
-                  <!-- Password input -->
-                  <div class="form-outline mb-4">
-                    <input
-                      type="password"
-                      id="form3Example4"
-                      class="form-control"
-                    />
-                    <label class="form-label" for="form3Example4"
-                      >Password</label
-                    >
-                  </div>
-
-                  <div class="mb-3">
-                    <select
-                      id="type"
-                      class="form-select"
-                      aria-label="Default select example"
-                    >
-                      <option value="Blogger">Blogger</option>
-                      <option value="Reader">Reader</option>
-                    </select>
-                    <label for="type" class="form-label">WHAT ARE YOU?</label>
-                  </div>
-                  <br />
-                  <!-- Checkbox -->
-                  <div class="form-check d-flex justify-content-center mb-4">
-                    <input
-                      class="form-check-input me-2"
-                      type="checkbox"
-                      value=""
-                      id="form2Example33"
-                      checked
-                    />
-                    <label class="form-check-label" for="form2Example33">
-                      Subscribe to our newsletter
-                    </label>
-                  </div>
-
-                  <!-- Submit button -->
-                  <button type="submit" class="btn btn-primary btn-block mb-4">
-                    Sign up
-                  </button>
-
-                  <!-- Register buttons -->
-                  <div class="text-center">
-                    <p>or sign up with:</p>
-                    <button
-                      type="button"
-                      class="btn btn-link btn-floating mx-1"
-                    >
-                      <a ref="https://www.facebook.com/"
-                        ><i class="fa fa-facebook-f"></i
-                      ></a>
-                    </button>
-
-                    <button
-                      type="button"
-                      class="btn btn-link btn-floating mx-1"
-                    >
-                      <i class="fa fa-google"></i>
-                    </button>
-
-                    <button
-                      type="button"
-                      class="btn btn-link btn-floating mx-1"
-                    >
-                      <i class="fa fa-twitter"></i>
-                    </button>
-
-                    <button
-                      type="button"
-                      class="btn btn-link btn-floating mx-1"
-                    >
-                      <i class="fa fa-github"></i>
-                    </button>
-                  </div>
-
-                  <p class="small fw-bold mt-2 pt-1 mb-0">
-                    Already have an account?
-                    <a class="link-danger"
-                      ><router-link to="/login">Log in</router-link></a
-                    >
-                  </p>
                 </form>
               </div>
             </div>
@@ -175,7 +170,7 @@ export default {
 
   methods: {
     Signup() {
-      fetch("http://localhost:8080/signup", {
+      fetch("https://super-blog-backend.herokuapp.com/signup", {
         method: "POST",
         body: JSON.stringify({
           email: this.email,

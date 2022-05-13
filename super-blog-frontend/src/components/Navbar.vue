@@ -30,7 +30,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><router-link to="/profile"><a class="dropdown-item">Account</a></router-link></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Admin</a></li>
             <li><hr class="dropdown-divider"></li>
             <li class="nav-item">
             <router-link class="btn btn-danger" to="/">LOGOUT</router-link>

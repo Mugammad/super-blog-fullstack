@@ -17,14 +17,26 @@ class UserDAO {
             return next(error)
         }
     }
+    async signIn(email, next){
+        try {
+            const [user] = await db('user')
+                .from('user')
+                .where('email', email)
+                .returning('user')
+
+            return user
+        } catch (error) {
+            next(error)
+        }
+    }
     async getUsers() {
-        const [id] = await db('user')
+        const users = await db('user')
             .select(
                 'username'
             )
             .returning('id')
 
-        return id
+        return users
     }
 }
 

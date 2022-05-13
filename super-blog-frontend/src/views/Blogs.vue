@@ -164,6 +164,16 @@
 import Navbar from "../components/Navbar.vue";
 export default {
     components: { Navbar },
+    data() {
+      return {
+        blogs: [],
+        title: "",
+        img: "",
+        category: "",
+        content: "",
+      };
+    },
+
     methods: {
       
     }

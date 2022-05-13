@@ -33,7 +33,7 @@
   <div class="testimonials mb-8">
     <label class="item" for="t-1">
       <div class="mycard">
-        <p class="cardtitle">Práctica</p>
+        <p class="cardtitle">Category</p>
         <div>
           <img src="https://i.pravatar.cc/200" alt="nivel5" class="cardimg" />
         </div>
@@ -44,7 +44,7 @@
     </label>
     <label class="item" for="t-2">
       <div class="mycard">
-        <p class="cardtitle">Práctica</p>
+        <p class="cardtitle">Category</p>
         <div>
           <img src="https://i.pravatar.cc/200" alt="nivel5" class="cardimg" />
         </div>
@@ -55,7 +55,7 @@
     </label>
     <label class="item" for="t-3">
       <div class="mycard">
-        <p class="cardtitle">Práctica</p>
+        <p class="cardtitle">Category</p>
         <div>
           <img src="https://i.pravatar.cc/200" alt="nivel5" class="cardimg" />
         </div>
@@ -66,7 +66,7 @@
     </label>
     <label class="item" for="t-4">
       <div class="mycard">
-        <p class="cardtitle">Práctica</p>
+        <p class="cardtitle">Category</p>
         <div>
           <img src="https://i.pravatar.cc/200" alt="nivel5" class="cardimg" />
         </div>
@@ -77,7 +77,7 @@
     </label>
     <label class="item" for="t-5">
       <div class="mycard">
-        <p class="cardtitle">Práctica</p>
+        <p class="cardtitle">Category</p>
         <div>
           <img src="https://i.pravatar.cc/200" alt="nivel5" class="cardimg" />
         </div>

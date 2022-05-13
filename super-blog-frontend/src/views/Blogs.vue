@@ -174,11 +174,17 @@ export default {
       };
     },
 
-    methods: {
-      
+   mounted() {
+    fetch("https://super-blog-backend.herokuapp.com/blogs")
+      .then((res) => res.json())
+      .then((data) => {
+        this.blogs = data;
+        console.log(data, this.blogs);
+      });
+  },
     }
 
-}
+
 </script>
 
 <style scoped>

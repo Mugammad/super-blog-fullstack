@@ -23,12 +23,12 @@
 				</p>
 		</div>
 	</div>
-  <div>
+  <!-- <div>
           <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
 EDIT
 </button>
 <button class="btn">DELETE</button>
-</div>
+</div> -->
           <!-- <div class="card" >
   <img src="../assets/blog.jpg" class="card-img-top" alt="../assets/blog.jpg">
   <div class="card-body">

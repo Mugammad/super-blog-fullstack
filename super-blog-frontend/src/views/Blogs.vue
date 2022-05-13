@@ -184,7 +184,7 @@
   <div class="color-overlay"></div>
 </div>
     </div>
-      <div class="col-md-6">
+      <!-- <div class="col-md-6">
     <div class="blog-card spring-fever">
   <div class="title-content">
     <h3><a href="#">10 inspiring photos</a></h3>
@@ -203,7 +203,7 @@
   <div class="gradient-overlay"></div>
   <div class="color-overlay"></div>
 </div>
-    </div><!-- /.blog-card -->
+    </div> -->
   </div>
 
 
@@ -215,6 +215,10 @@ import Navbar from "../components/Navbar.vue";
 
 export default {
     components: { Navbar },
+
+    data() {
+      return blogs
+    }
 }
 
 </script>

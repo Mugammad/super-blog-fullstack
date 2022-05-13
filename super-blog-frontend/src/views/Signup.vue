@@ -120,7 +120,7 @@ export default {
 
   methods : {
     Signup() {
-      fetch("", {
+      fetch("https://super-blog-backend.herokuapp.com/signup", {
         method: 'POST',
         body: JSON.stringify({
           email: this.email,

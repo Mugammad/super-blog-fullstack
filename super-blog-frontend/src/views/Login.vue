@@ -92,8 +92,8 @@ methods: {
       password: this.password,
     }
     console.log(user)
-    fetch("", {
-      method: "PATCH",
+    fetch("https://super-blog-backend.herokuapp.com/signin", {
+      method: "POST",
       body: JSON.stringify(user),
       headers: {
         "Content-type": "application/json; charset=UTF-8",

@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 createApp(App).use(router).mount('#app')
 library.add(faHatWizard)
-Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 
 import "bootstrap/dist/css/bootstrap.css"

@@ -28,35 +28,34 @@
     </div>
   </div>
 
-
   </div>
 </template>
 
 <script>
 import Navbar from "../components/Navbar.vue";
 export default {
-    components: { Navbar },
-    data() {
-      return {
-        blogs: [],
-        title: "",
-        img: "",
-        category: "",
-        content: "",
-      };
-    },
+  components: { Navbar },
+  name: "Blogs",
 
-   mounted() {
+  data() {
+    return {
+      page: "blogs",
+      blogs: [],
+      title: "",
+      image: "",
+      category: "",
+      content: "",
+    };
+  },
+  mounted() {
     fetch("https://super-blog-backend.herokuapp.com/blogs")
       .then((res) => res.json())
       .then((data) => {
         this.blogs = data;
-        console.log(data, this.blogs);
+        console.log(this.blogs);
       });
   },
-    }
-
-
+};
 </script>
 
 <style scoped>
@@ -367,6 +366,17 @@ h3:after {
   font-size:1.2em
 }
 
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-bottom: 16px solid blue;
+  width: 120px;
+  left: 50%;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
 
 .profile-links a[href*=nodws\.com]:before{
     content:"\2616";
@@ -466,4 +476,3 @@ h3:after {
   box-shadow:none !important
 }
 </style>
-

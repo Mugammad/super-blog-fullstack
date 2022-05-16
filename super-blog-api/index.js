@@ -2,7 +2,7 @@ const express = require('express')
 const userRouter = require('./routes/user')
 const postRouter = require('./routes/posts')
 const bodyParser = require('body-parser')
-// require('dotenv').config()
+require('dotenv').config()
 
 const app = express()
 app.use(express.json())

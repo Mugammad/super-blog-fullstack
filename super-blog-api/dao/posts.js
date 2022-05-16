@@ -53,6 +53,42 @@ class PostDAO {
             return next(error)
         }
     }
+    async likePost(postId, userId, next) {
+        try {
+            const [alreadyLiked] = await db('liked')
+                .from('liked')
+                .where('user_id', userId)
+                .where('post_liked_id', postId)
+                .returning('alreadyLiked')
+
+            if(!alreadyLiked) throw 'continue'
+
+            return `user with id of ${alreadyLiked.user_id} has already liked post with id of ${alreadyLiked.post_liked_id}`
+        } catch (error) {
+            console.log(error)
+            try {
+                const [postFound] = await db('posts')
+                    .from('posts')
+                    .where('id', postId)
+                    .returning('postFound')
+
+                if(!postFound) throw `Post with id of ${postId} NOT FOUND`
+
+                console.log(userId)
+                console.log(postId)
+                const [likedPost] = await db('liked')
+                    .insert({
+                        user_id: userId,
+                        post_liked_id: parseInt(postId)
+                    })
+                    .returning('likedPost')
+
+                return `post liked titled ${postFound.title} with id of ${postFound.id} by user with id of ${likedPost.user_id}`
+            } catch (err) {
+                return next(err)
+            }
+        }
+    }
 }
 
 module.exports = new PostDAO()

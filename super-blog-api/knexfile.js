@@ -10,7 +10,7 @@ module.exports = {
     client: 'pg',
     connection: {
       database: creds.DB_NAME,
-      user:     creds.DB_USER,
+      user: creds.DB_USER,
       password: creds.DB_PASS
     },
     pool: {
@@ -18,7 +18,14 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: 'knex_migrations',
+      directory: __dirname + '/db/migrations',
+    },
+    seeds: {
+      directory: __dirname + '/db/seeds',
+    },
+    ssl: {
+      rejectUnauthorized: false
     }
   },
 
@@ -30,7 +37,7 @@ module.exports = {
       directory: __dirname + '/db/migrations',
     },
     seeds: {
-        directory: __dirname + '/db/seeds',
+      directory: __dirname + '/db/seeds',
     },
     ssl: {
       rejectUnauthorized: false

@@ -8,6 +8,7 @@
     "rollback": "npx knex migrate:rollback",
     "seed": "npx knex seed:run",
     "start": "node index.js",
+    "devStart": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

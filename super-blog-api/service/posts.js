@@ -12,6 +12,9 @@ class PostService {
     async deletePost(postId, userId, next){
         return postDAO.deletePost(postId, userId, next)
     }
+    async likeBlog(postId, userId, next){
+        return postDAO.likePost(postId, userId, next)
+    }
 }
 
 module.exports = new PostService()

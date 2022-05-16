@@ -8,10 +8,10 @@
       <div class="container-fluid">
 
           <div class="card" >
-  <img src="../assets/blog.jpg" class="card-img-top" alt="../assets/blog.jpg">
+  <img :src="blog.image" :alt="blog.title" />
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 class="card-title">{{ blog.title }}</h5>
+    <p class="card-text">{{ blog.content }}</p>
 <div>
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
 EDIT
@@ -61,8 +61,22 @@ EDIT
 
 <script>
 export default {
-
-}
+  data() {
+    return {
+      blogs: [
+      ],
+    };
+  },
+  mounted() {
+    fetch("https://super-blog-backend.herokuapp.com/blogs" + this.id)
+      .then((res) => res.json())
+      .then((data) => {
+        this.blogs = data;
+        console.log(data);
+      })
+      .catch((err) => console.log(err.message));
+  },
+};
 </script>
 
 <style scoped>

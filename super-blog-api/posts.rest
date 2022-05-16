@@ -1,6 +1,6 @@
 POST http://localhost:8080/blogs
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxM30sImlhdCI6MTY1MjI1NTY0MCwiZXhwIjoxNjUyNDI4NDQwfQ.RxWbp9cqaoxXj8Zao7DfH9-eJFnhom42qjAdSm5sjiE
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxfSwiaWF0IjoxNjUyNjgzODU3LCJleHAiOjE2NTI4NTY2NTd9.9-O5zdiB2g7VzPFVR_cGIHkkXo17d8VPyAD2aqv7L80
 
 {
     "title": "First Blog",
@@ -16,3 +16,11 @@ x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxM30sImlhd
 ###
 DELETE http://localhost:8080/blogs/3
 x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxM30sImlhdCI6MTY1MjM0MzI1NywiZXhwIjoxNjUyNTE2MDU3fQ.jRmVTjY9flG1D0TU1Q5_buizmp6lHPIIar3X5iOxvxY
+###
+POST http://localhost:8080/blogs/like
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxfSwiaWF0IjoxNjUyNjgzODU3LCJleHAiOjE2NTI4NTY2NTd9.9-O5zdiB2g7VzPFVR_cGIHkkXo17d8VPyAD2aqv7L80
+
+{
+    "post_liked_id": 1
+}

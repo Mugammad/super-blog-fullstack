@@ -30,7 +30,7 @@ class PostController {
     }
     async likeBlog(req, res, next){
         try {
-            const liked = await postService.likeBlog(req.params.id, req.user.id, next)
+            const liked = await postService.likeBlog(req.body, req.user.id, next)
             if(!liked) throw 'there was an error somewhere'
             res.status(200).json(liked)
         } catch (error) {

@@ -53,12 +53,12 @@ class PostDAO {
             return next(error)
         }
     }
-    async likePost(postId, userId, next) {
+    async likePost(post_liked_id, userId, next) {
         try {
             const [alreadyLiked] = await db('liked')
                 .from('liked')
                 .where('user_id', userId)
-                .where('post_liked_id', postId)
+                .where('post_liked_id', post_liked_id)
                 .returning('alreadyLiked')
 
             if(!alreadyLiked) throw 'continue'
@@ -69,21 +69,21 @@ class PostDAO {
             try {
                 const [postFound] = await db('posts')
                     .from('posts')
-                    .where('id', postId)
+                    .where('id', post_liked_id)
                     .returning('postFound')
 
-                if(!postFound) throw `Post with id of ${postId} NOT FOUND`
+                if(!postFound) throw `Post with id of ${post_liked_id} NOT FOUND`
 
                 console.log(userId)
-                console.log(postId)
-                const [likedPost] = await db('liked')
+                console.log(post_liked_id)
+                const [id] = await db('liked')
                     .insert({
-                        user_id: userId,
-                        post_liked_id: parseInt(postId)
+                        user_id: parseInt(userId),
+                        post_liked_id
                     })
-                    .returning('likedPost')
+                    .returning('id')
 
-                return `post liked titled ${postFound.title} with id of ${postFound.id} by user with id of ${likedPost.user_id}`
+                return `post liked titled ${postFound.title} with id of ${postFound.id} by user with id of ${userId}`
             } catch (err) {
                 return next(err)
             }

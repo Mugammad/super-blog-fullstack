@@ -5,7 +5,7 @@ const authJwt = require('../middleware/auth')
 const router = express.Router()
 
 router.post('/blogs', authJwt, PostController.postBLog)
-router.post('/blogs/like/:id', authJwt, PostController.likeBlog)
+router.post('/blogs/like', authJwt, PostController.likeBlog)
 router.delete('/blogs/:id', authJwt, PostController.deleteBlog)
 router.get('/blogs', PostController.getBlogs)
 

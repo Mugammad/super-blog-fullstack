@@ -13,7 +13,8 @@ class PostService {
         return postDAO.deletePost(postId, userId, next)
     }
     async likeBlog(postId, userId, next){
-        return postDAO.likePost(postId, userId, next)
+        const {post_liked_id} = postId
+        return postDAO.likePost(post_liked_id, userId, next)
     }
 }
 
